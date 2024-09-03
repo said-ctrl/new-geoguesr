@@ -9,7 +9,7 @@
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-        <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 
 
 
@@ -18,18 +18,60 @@
 
 </head>
 
-<body>
+<body class="bg-[url('images/etoile.avif')] bg-top">
+    <header class="lg:px-16 px-4 bg-white flex flex-wrap items-center py-4 shadow-md">
+        <div class="flex-1 flex justify-between items-center">
+            <a href="index.html" class="text-xl">Où suis-je</a>
+        </div>
 
-    <h2>
-        <a href="index.html">menu</a>
-    </h2>
+        <label for="menu-toggle" class="pointer-cursor md:hidden block">
+            <svg class="fill-current text-gray-900" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                viewBox="0 0 20 20">
+                <title>menu</title>
+                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+            </svg>
+        </label>
+        <input class="hidden" type="checkbox" id="menu-toggle" />
 
-    <div id="map"></div>
-    <button type=" button" id="button"
-        class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">ma
-    reponse</button>
+        <div class="hidden md:flex md:items-center md:w-auto w-full" id="menu">
+            <nav>
+                <ul class="md:flex items-center justify-between text-base text-gray-700 pt-4 md:pt-0">
+                    <li><a class="md:p-4 py-3 px-0 block" href="index.html">acceuil</a></li>
+                    <li><a class="md:p-4 py-3 px-0 block" href="carte1.html">Jouer</a></li>
+                    <li><a class="md:p-4 py-3 px-0 block" href="#">Blog</a></li>
+                    <li><a class="md:p-4 py-3 px-0 block md:mb-0 mb-2" href="#">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
 
+    </header>
+    <main>
+        <h2>
+            <a href="index.html">menu</a>
+        </h2>
+        <div class="flex">
+            <div id="map"></div>
+                <button id="button"
+                    class="rounded-md bg-red-600 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-red-700 focus:shadow-none active:bg-red-700 hover:bg-red-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2"
+                    type="button">
+                    selctionné sur la carte
+                </button>
+                <button id="btn"
+                    class="rounded-md bg-green-600 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-green-700 focus:shadow-none active:bg-green-700 hover:bg-green-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2"
+                    type="button">
+                    validé
+                </button>
+            </div>
+            <div id="photo" class="flex">
+<h1 class="text-white">Reponse</h1>
+        <div id="result" class="text-white text-xl">
+            </div>
+         
+        
 
+        </div>
+
+    </main>
 </body>
 <script src="end/style.js"></script>
 
